@@ -24,7 +24,7 @@ class Participant(models.Model):
 	phone_no = PhoneNumberField(blank=REQUIRED_PHONE_NO)
 	age = models.PositiveIntegerField(validators=[MinValueValidator(MIN_AGE)])
 	degree_group = models.CharField(max_length=2, choices=EDUCATIONAL_DEGREE_CHOICES, default='BC')
-	unemployed = models.BoolField(blank=True, default=False)
+	unemployed = models.BooleanField(blank=True, default=False)
 	achievements = models.TextField(blank=True)
 	joined_date = models.DateTimeField(auto_now_add=True)
 
