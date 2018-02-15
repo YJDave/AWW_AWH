@@ -20,12 +20,13 @@ class Participant(models.Model):
 	first_name = models.CharField(max_length=200)
 	last_name = models.CharField(max_length=200)
 	legal_name = models.CharField(max_length=400)
-	address = models.CharField(max_length=1400, blank=REQUIRED_ADDRESS)
+	address = models.TextField(blank=REQUIRED_ADDRESS)
 	phone_no = PhoneNumberField(blank=REQUIRED_PHONE_NO)
 	age = models.PositiveIntegerField(validators=[MinValueValidator(MIN_AGE)])
-	joined_date = models.DateTimeField(auto_now_add=True)
 	degree_group = models.CharField(max_length=2, choices=EDUCATIONAL_DEGREE_CHOICES, default='BC')
 	unemployed = models.BoolField(blank=True, default=False)
+	achievements = models.TextField(blank=True)
+	joined_date = models.DateTimeField(auto_now_add=True)
 
 	def __str__(self):
 		return str(self.user) + " : " + self.legal_name
