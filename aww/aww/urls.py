@@ -17,9 +17,15 @@ from django.conf.urls import url
 from django.contrib import admin
 from awwweb.views import (
 	home,
+	signupForm,
+	userAccount,
 )
+from django.contrib.auth.views import login
 
 urlpatterns = [
 	url(r'^$', home, name="home"),
+	url(r'^signup/', signupForm, name="signup"),
+	url(r'^login/', login, name="login"),
     url(r'^admin/', admin.site.urls),
+	url(r'^accounts/profile/$', userAccount, name="account"),
 ]
