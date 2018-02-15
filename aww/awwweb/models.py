@@ -5,7 +5,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 # Create your models here.
 
-class Participant(models.Model):
+class AppUser(models.Model):
 	MIN_AGE = 18
 	REQUIRED_PHONE_NO = False
 	REQUIRED_ADDRESS = False
