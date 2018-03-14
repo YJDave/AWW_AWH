@@ -1,0 +1,18 @@
+body{
+	font-family: 'Lato', sans-serif;
+}
+
+img{
+	width: 100px;
+	height: 10	0px;
+}
+
+.navbar-default{
+	background-color: #e7e7e7;
+}
+
+#heading{
+	font-weight: bold;
+	font-size: 30px;
+	margin: 10px 17%;
+}
