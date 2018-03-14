@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'aww',
     'adminsite',
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [
