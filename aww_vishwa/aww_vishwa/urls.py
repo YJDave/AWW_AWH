@@ -16,8 +16,12 @@ from adminsite.views import (
 	AdminHomePage,
 )
 
+from django.contrib.auth.views import login, logout
+
 admin_site_urlpatterns = [
     url(r'^$', AdminHomePage.as_view(), name="admin_home_page"),
+    url(r'^login/$', login, name="admin_login"),
+    url(r'^logout/$', logout, name="admin_logout"),
 ]
 
 urlpatterns = [
