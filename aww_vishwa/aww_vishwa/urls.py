@@ -6,6 +6,7 @@ from aww.views import (
 	ListCirculars,
 	ListVacancies,
 	ApplyForVacancy,
+	ListVacancyResults,
 	VacancyResult,
 )
 
@@ -16,5 +17,6 @@ urlpatterns = [
     url(r'^circulars/$', ListCirculars.as_view(), name="circulars"),
     url(r'^vacancies/$', ListVacancies.as_view(), name="vacancies"),
     url(r'^apply/$', ApplyForVacancy.as_view(), name="apply"),
-    url(r'^results/$', VacancyResult.as_view(), name="results"),
+    url(r'^results/$', ListVacancyResults.as_view(), name="results"),
+    url(r'^results/(?P<result_id>[\d]+)/$', VacancyResult.as_view(), name="results"),
 ]

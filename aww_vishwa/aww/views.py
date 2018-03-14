@@ -21,6 +21,10 @@ class ApplyForVacancy(views.TemplateView):
 	template_name = "aww/apply.html"
 	pass;
 
-class VacancyResult(views.TemplateView):
+class ListVacancyResults(views.TemplateView):
 	template_name = "aww/results.html"
+	pass;
+
+class VacancyResult(views.TemplateView):
+	template_name = "aww/result.html"
 	pass;
