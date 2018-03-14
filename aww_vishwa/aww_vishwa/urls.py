@@ -16,6 +16,7 @@ from adminsite.views import (
 	AdminHomePage,
 	ListCenters,
 	CenterInfo,
+	CenterApplications,
 )
 
 from django.contrib.auth.views import login, logout
@@ -26,6 +27,7 @@ admin_site_urlpatterns = [
     url(r'^logout/$', logout, name="admin_logout"),
     url(r'^centers/$', ListCenters.as_view(), name="admin_list_centers"),
     url(r'^centers/(?P<center_id>[\d]+)$', CenterInfo.as_view(), name="admin_center"),
+    url(r'^centers/(?P<center_id>[\d]+)/applications$', CenterApplications.as_view(), name="admin_applications"),
 ]
 
 urlpatterns = [

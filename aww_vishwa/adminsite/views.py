@@ -12,3 +12,7 @@ class ListCenters(views.TemplateView):
 class CenterInfo(views.TemplateView):
 	template_name = "admin/center.html"
 	pass;
+
+class CenterApplications(views.TemplateView):
+	template_name = "admin/applications.html"
+	pass;
