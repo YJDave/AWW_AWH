@@ -1,22 +1,17 @@
 from django.shortcuts import render
 from django.contrib.auth import views
 
-class AdminHomePage(views.TemplateView):
-	template_name = "admin/home.html"
-	pass;
+def AdminHomePage(request):
+	return render(request, "admin/home.html", {})
 
-class ListCenters(views.TemplateView):
-	template_name = "admin/centers.html"
-	pass;
+def ListCenters(request):
+	return render(request, "admin/centers.html", {})
 
-class CenterInfo(views.TemplateView):
-	template_name = "admin/center.html"
-	pass;
+def CenterInfo(request, center_id):
+	return render(request, "admin/center.html", {})
 
-class CenterApplications(views.TemplateView):
-	template_name = "admin/applications.html"
-	pass;
+def CenterApplications(request, center_id):
+	return render(request, "admin/applications.html", {})
 
-class ApplicationInfo(views.TemplateView):
-	template_name = "admin/application.html"
-	pass;
+def ApplicationInfo(request, center_id, application_id):
+	return render(request, "admin/application.html", {})

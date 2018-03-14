@@ -23,28 +23,28 @@ from adminsite.views import (
 from django.contrib.auth.views import login, logout
 
 admin_site_urlpatterns = [
-    url(r'^$', AdminHomePage.as_view(), name="admin_home_page"),
+    url(r'^$', AdminHomePage, name="admin_home_page"),
     url(r'^login/$', login, name="admin_login"),
     url(r'^logout/$', logout, name="admin_logout"),
-    url(r'^centers/$', ListCenters.as_view(), name="admin_list_centers"),
-    url(r'^centers/(?P<center_id>[\d]+)$', CenterInfo.as_view(), name="admin_center"),
-    url(r'^centers/(?P<center_id>[\d]+)/applications$', CenterApplications.as_view(),
+    url(r'^centers/$', ListCenters, name="admin_list_centers"),
+    url(r'^centers/(?P<center_id>[\d]+)$', CenterInfo, name="admin_center"),
+    url(r'^centers/(?P<center_id>[\d]+)/applications$', CenterApplications,
     	name="admin_applications"),
-    url(r'^centers/(?P<center_id>[\d]+)/applications/(?P<application_id>[\d]+)/$', ApplicationInfo.as_view(),
+    url(r'^centers/(?P<center_id>[\d]+)/applications/(?P<application_id>[\d]+)/$', ApplicationInfo,
     	name="admin_applications"),
 
 ]
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', HomePage.as_view(), name="home_page"),
+    url(r'^$', HomePage, name="home_page"),
     url(r'^admin-user/', include(admin_site_urlpatterns), name="admin_urls"),
-    url(r'^subscribe/$', SubscribeUser.as_view(), name="subscription"),
-    url(r'^circulars/$', ListCirculars.as_view(), name="circulars"),
-    url(r'^vacancies/$', ListVacancies.as_view(), name="vacancies"),
-    url(r'^apply/$', ApplyForVacancy.as_view(), name="apply"),
-    url(r'^results/$', ListVacancyResults.as_view(), name="results"),
-    url(r'^results/(?P<result_id>[\d]+)/$', VacancyResult.as_view(), name="results"),
-    url(r'^eligibility/$', ListEligibility.as_view(), name="eligibility"),
-    url(r'^learning-materials/$', ListLearningMaterials.as_view(), name="learning_materials"),
+    url(r'^subscribe/$', SubscribeUser, name="subscription"),
+    url(r'^circulars/$', ListCirculars, name="circulars"),
+    url(r'^vacancies/$', ListVacancies, name="vacancies"),
+    url(r'^apply/$', ApplyForVacancy, name="apply"),
+    url(r'^results/$', ListVacancyResults, name="results"),
+    url(r'^results/(?P<result_id>[\d]+)/$', VacancyResult, name="results"),
+    url(r'^eligibility/$', ListEligibility, name="eligibility"),
+    url(r'^learning-materials/$', ListLearningMaterials, name="learning_materials"),
 ]

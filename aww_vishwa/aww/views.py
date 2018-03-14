@@ -1,39 +1,32 @@
 from django.shortcuts import render
 from django.contrib.auth import views
+from .forms import (
+	SubscribeUserForm,
+)
 
-class HomePage(views.TemplateView):
-	template_name = "aww/home.html"
-	pass;
+def HomePage(request):
+	return render(request, "aww/home.html", {})
 
-class SubscribeUser(views.TemplateView):
-	template_name = "aww/subscribe.html"
-	pass;
+def SubscribeUser(request):
+	return render(request, "aww/subscribe.html", {})
 
-class ListCirculars(views.TemplateView):
-	template_name = "aww/circulars.html"
-	pass;
+def ListCirculars(request):
+	return render(request, "aww/circulars.html", {})
 
-class ListVacancies(views.TemplateView):
-	template_name = "aww/vacancies.html"
-	pass;
+def ListVacancies(request):
+	return render(request, "aww/vacancies.html", {})
 
-class ApplyForVacancy(views.TemplateView):
-	template_name = "aww/apply.html"
-	pass;
+def ApplyForVacancy(request):
+	return render(request, "aww/apply.html", {})
 
-class ListVacancyResults(views.TemplateView):
-	template_name = "aww/results.html"
-	pass;
+def ListVacancyResults(request):
+	return render(request, "aww/results.html", {})
 
-class VacancyResult(views.TemplateView):
-	template_name = "aww/result.html"
-	pass;
+def VacancyResult(request, result_id):
+	return render(request, "aww/result.html", {})
 
-class ListEligibility(views.TemplateView):
-	template_name = "aww/eligibility.html"
-	pass;
+def ListEligibility(request):
+	return render(request, "aww/eligibility.html", {})
 
-class ListLearningMaterials(views.TemplateView):
-	template_name = "aww/learning-materials.html"
-	pass;
-
+def ListLearningMaterials(request):
+	return render(request, "aww/learning-materials.html", {})
