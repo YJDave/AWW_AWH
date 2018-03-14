@@ -20,3 +20,7 @@ class ListVacancies(views.TemplateView):
 class ApplyForVacancy(views.TemplateView):
 	template_name = "aww/apply.html"
 	pass;
+
+class VacancyResult(views.TemplateView):
+	template_name = "aww/results.html"
+	pass;
