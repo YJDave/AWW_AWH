@@ -34,5 +34,6 @@ class ListEligibility(views.TemplateView):
 	pass;
 
 class ListLearningMaterials(views.TemplateView):
-	template_name = "aww/base.html"
+	template_name = "aww/learning-materials.html"
 	pass;
+
