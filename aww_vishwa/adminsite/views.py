@@ -16,3 +16,7 @@ class CenterInfo(views.TemplateView):
 class CenterApplications(views.TemplateView):
 	template_name = "admin/applications.html"
 	pass;
+
+class ApplicationInfo(views.TemplateView):
+	template_name = "admin/application.html"
+	pass;
