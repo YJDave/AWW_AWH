@@ -9,6 +9,7 @@ from aww.views import (
 	ListVacancyResults,
 	VacancyResult,
 	ListEligibility,
+	ListLearningMaterials,
 )
 
 urlpatterns = [
@@ -21,4 +22,5 @@ urlpatterns = [
     url(r'^results/$', ListVacancyResults.as_view(), name="results"),
     url(r'^results/(?P<result_id>[\d]+)/$', VacancyResult.as_view(), name="results"),
     url(r'^eligibility/$', ListEligibility.as_view(), name="eligibility"),
+    url(r'^learning-materials/$', ListLearningMaterials.as_view(), name="learning_materials"),
 ]

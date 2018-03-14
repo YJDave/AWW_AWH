@@ -32,3 +32,8 @@ class VacancyResult(views.TemplateView):
 class ListEligibility(views.TemplateView):
 	template_name = "aww/eligibility.html"
 	pass;
+
+class ListLearningMaterials(views.TemplateView):
+	template_name = "aww/learning-materials.html"
+	pass;
+
