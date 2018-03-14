@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +8,9 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Lato:700" rel="stylesheet">
-	<link rel="stylesheet" href="base.css">
+	<link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 <body>
-
 	<img src="http://jobsamosa.com/wp-content/uploads/2014/10/Ministry-of-Women-Child-Development-Recruitment-2014.jpg" alt="" class="img-rounded">
 	<span id="heading">Anganwadi Workers & Helpers Recruitment</span>
 	<img src="https://english.newstracklive.com/uploads/education-news/job-search-news/Jun/19/big_thumb/18-1452011456_5947524170597_5947b0b8f0a6a.jpg" alt="" class="img-rounded">
