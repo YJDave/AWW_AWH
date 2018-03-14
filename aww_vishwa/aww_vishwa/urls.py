@@ -1,4 +1,4 @@
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 from aww.views import (
 	HomePage,
@@ -12,9 +12,18 @@ from aww.views import (
 	ListLearningMaterials,
 )
 
+from adminsite.views import (
+	AdminHomePage,
+)
+
+admin_site_urlpatterns = [
+    url(r'^$', AdminHomePage.as_view(), name="admin_home_page"),
+]
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', HomePage.as_view(), name="home_page"),
+    url(r'^admin-user/', include(admin_site_urlpatterns), name="admin_urls"),
     url(r'^subscribe/$', SubscribeUser.as_view(), name="subscription"),
     url(r'^circulars/$', ListCirculars.as_view(), name="circulars"),
     url(r'^vacancies/$', ListVacancies.as_view(), name="vacancies"),
