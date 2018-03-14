@@ -14,6 +14,8 @@ from aww.views import (
 
 from adminsite.views import (
 	AdminHomePage,
+	ListCenters,
+	CenterInfo,
 )
 
 from django.contrib.auth.views import login, logout
@@ -22,6 +24,8 @@ admin_site_urlpatterns = [
     url(r'^$', AdminHomePage.as_view(), name="admin_home_page"),
     url(r'^login/$', login, name="admin_login"),
     url(r'^logout/$', logout, name="admin_logout"),
+    url(r'^centers/$', ListCenters.as_view(), name="admin_list_centers"),
+    url(r'^centers/(?P<center_id>[\d]+)$', CenterInfo.as_view(), name="admin_center"),
 ]
 
 urlpatterns = [

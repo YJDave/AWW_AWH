@@ -5,3 +5,10 @@ class AdminHomePage(views.TemplateView):
 	template_name = "admin/home.html"
 	pass;
 
+class ListCenters(views.TemplateView):
+	template_name = "admin/centers.html"
+	pass;
+
+class CenterInfo(views.TemplateView):
+	template_name = "admin/center.html"
+	pass;
