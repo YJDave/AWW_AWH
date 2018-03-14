@@ -1,1 +1,32 @@
-<h3>Hom page...</h3>
+{% extends 'aww/base.html' %}
+{% block content %}
+<table align="center">
+  <tbody><tr>
+    <td>
+    <h1>What's new?</h1>
+  </td>
+  </tr>
+  <tr>
+    <td rowspan="3">
+  <marquee direction="up" onmouseover="this.stop();" onmouseout="this.start();" scrolldelay="100">
+    <a href="http://www.wcd.nic.in/notification/recruitment-vacancies">New Vacancies out</a>
+    <br>
+    <a href="http://www.thehindu.com/news/cities/Delhi/govt-doubles-salary-of-anganwadi-workers/article19333885.ece">Govt.doubles the salary-of-anganwadi-workers</a>
+    <br>
+    <a href="http://indianexpress.com/article/cities/ahmedabad/gujarat-anganwadi-workers-seek-pay-hike-to-go-on-3-day-strike-4525288/">Gujarat: Anganwadi workers seek pay hike, to go on 3-day strike</a>
+    <br>
+  </marquee></td>
+</tr>
+
+</table>
+<br>
+<br>
+<marquee>
+  <img src="static/images/download (2).jfif"  style="height:150px; width:150px">
+  <img src="static/images/download (3).jfif" style="height:150px; width:150px">
+  <img src="static/images/images (1).jfif" style="height:150px; width:150px">
+  <img src="static/images/images (2).jfif" style="height:150px; width:150px">
+  <img src="static/images/images.jfif" style="height:150px; width:150px">
+</marquee>
+</center>
+{% endblock %}
