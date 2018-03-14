@@ -5,6 +5,7 @@ from aww.views import (
 	SubscribeUser,
 	ListCirculars,
 	ListVacancies,
+	ApplyForVacancy,
 )
 
 urlpatterns = [
@@ -13,4 +14,5 @@ urlpatterns = [
     url(r'^subscribe/$', SubscribeUser.as_view(), name="subscription"),
     url(r'^circulars/$', ListCirculars.as_view(), name="circulars"),
     url(r'^vacancies/$', ListVacancies.as_view(), name="vacancies"),
+    url(r'^apply/$', ApplyForVacancy.as_view(), name="apply"),
 ]

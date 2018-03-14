@@ -16,3 +16,7 @@ class ListCirculars(views.TemplateView):
 class ListVacancies(views.TemplateView):
 	template_name = "aww/vacancies.html"
 	pass;
+
+class ApplyForVacancy(views.TemplateView):
+	template_name = "aww/apply.html"
+	pass;
