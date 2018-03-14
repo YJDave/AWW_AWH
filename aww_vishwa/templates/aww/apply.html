@@ -1,3 +1,74 @@
-<h3>This is the form for application, with many validations and various fields.
-Like they want to apply for worker or helper, etc. If there are many questions, divide them
-in many pages form. </h3>
+{% extends 'aww/base.html' %}
+{% block content %}
+<form action="" method="">
+  <table>
+    <tr>
+      <td>Village:</td>
+      <td><input type="text" name="village"></td>
+    </tr>
+    <tr>
+      <td>Area:</td>
+      <td><input type="text" name="area"></td>
+    </tr>
+    <tr>
+      <td>Ward:</td>
+      <td><input type="text" name="ward"></td>
+    </tr>
+    <tr>
+      <td>Job Profile:</td>
+      <td><input type="radio" name="type" value="AWW" checked>AWW<br></td>
+      <td><input type="radio" name="type" value="AWH"> AWH<br></td>
+    </tr>
+    <tr>
+      <td>Name of the candidate:</td>
+      <td><input type="text" name="name"></td>
+    </tr>
+
+    <tr>
+      <td>Age(years|monts|days at time of application):</td>
+      <td><input type="number" name="age"></td>
+    </tr>
+    <tr>
+      <td>Caste</td>
+      <td><input type="radio" name="caste" value="General" checked> General<br></td>
+      <td><input type="radio" name="caste" value="OBC"> OBC<br></td>
+      <td><input type="radio" name="caste" value="SC/ST"> SC/ST</td>
+    </tr>
+    <tr>
+      <td>Address:</td>
+      <td><input type="text" name="add"></td>
+    </tr>
+    <tr>
+      <td>Pin Code:</td>
+      <td><input type="number" name="pin"></td>
+    </tr>
+    <tr>
+      <td><select>
+        <option value="7th pass">7th pass</option>
+        <option value="10th pass">10th pass</option>
+        <option value="12th pass">12th pass</option>
+        <option value="Graduate">Graduate</option>
+        <option value="Others">Others</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td>Documents you have:</td>
+      <td>
+        <input type="checkbox" name="doc" value="Ration Card">Ration Card<br>
+        <input type="checkbox" name="doc" value="Aadhar Card">Aadhar Card<br>
+      </td>
+      <td>
+        <input type="checkbox" name="doc" value="Marriage certificate">Marriage certificate<br>
+        <input type="checkbox" name="doc" value="Birth certificate">Birth certificate<br>
+      </td>
+
+    </tr>
+    <tr>
+      <td colspan=2>
+        <input type="checkbox" name="con" value="I agree">I agree to all the terms and conditions and that the information has been filled by me.<br>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><input type="Submit" value="Submit"></td>
+{% endblock %}
