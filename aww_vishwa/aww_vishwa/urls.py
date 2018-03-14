@@ -20,6 +20,5 @@ urlpatterns = [
     url(r'^apply/$', ApplyForVacancy.as_view(), name="apply"),
     url(r'^results/$', ListVacancyResults.as_view(), name="results"),
     url(r'^results/(?P<result_id>[\d]+)/$', VacancyResult.as_view(), name="results"),
-    url(r'^apply/$', ApplyForVacancy.as_view(), name="apply"),
-    url(r'^eligibility/$', ListEligibility.as_view(), name="apply"),
+    url(r'^eligibility/$', ListEligibility.as_view(), name="eligibility"),
 ]
