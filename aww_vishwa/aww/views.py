@@ -12,3 +12,7 @@ class SubscribeUser(views.TemplateView):
 class ListCirculars(views.TemplateView):
 	template_name = "aww/circulars.html"
 	pass;
+
+class ListVacancies(views.TemplateView):
+	template_name = "aww/vacancies.html"
+	pass;
