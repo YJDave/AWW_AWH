@@ -32,7 +32,6 @@ admin_site_urlpatterns = [
     	name="admin_applications"),
     url(r'^centers/(?P<center_id>[\d]+)/applications/(?P<application_id>[\d]+)/$', ApplicationInfo,
     	name="admin_applications"),
-
 ]
 
 urlpatterns = [
