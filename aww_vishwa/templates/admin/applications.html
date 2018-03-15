@@ -1,3 +1,10 @@
 <h3>List of all applications user has submitted for specific aaganwadi center</h3>
 <h3>It should also display buttons to select application and should also include filters
 to filter out the application by their type, i.e. selected/selected-for-interview/selected-final etc.</h3>
+
+{% for app in applications %}
+	<a href='{{app.id}}/'>{{ app.name }}</a>
+	<h4>{{ app.center }}</h4>
+	<h4>{{ app.digital_mark }}</h4>
+{% endfor %}
+

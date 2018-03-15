@@ -9,7 +9,7 @@ from .models import (
 class SubscribeUserForm(forms.ModelForm):
 	class Meta:
 		model = Subscribers
-		fields = ('phone_no',)
+		fields = ("phone_no",)
 
 # class ApplyForm(forms.ModelForm):
 # 	class Meta:

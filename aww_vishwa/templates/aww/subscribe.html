@@ -5,7 +5,8 @@ announced...</h3>
 {% extends 'aww/base.html' %}
 
 {% block content %}
-  <br>Contact Number :
-  <input type="number" name="Contact Number"><br><br>
-  <input type="submit" name="Subscribe" value="Subscribe">
+<form method="post">{% csrf_token %}
+{{ form.as_p }}
+<button type="submit">Subscribe</button>
+</form>
 {% endblock %}

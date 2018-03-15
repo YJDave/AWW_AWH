@@ -2,13 +2,13 @@ from django.db import models
 from django.contrib.auth.models import User
 from phonenumber_field.modelfields import PhoneNumberField
 
-class Admin(models.Model):
-	user = models.OneToOneField(User, on_delete=models.CASCADE)
-
 class Center(models.Model):
 	name = models.CharField(max_length=250)
 	address = models.CharField(max_length=1000, default="", blank=True)
-	admins = models.ForeignKey(Admin, on_delete=models.CASCADE)
+
+class Admin(models.Model):
+	user = models.OneToOneField(User, on_delete=models.CASCADE)
+	center = models.ForeignKey(Center)
 
 class Subscribers(models.Model):
 	phone_no = PhoneNumberField()
@@ -42,4 +42,4 @@ class Application(models.Model):
 	has_marriage_certi = models.BooleanField(default=False)
 	has_rashon_certi = models.BooleanField(default=False)
 	has_adhaar_certi = models.BooleanField(default=False)
-	has_waters_certi = models.BooleanField(default=False)
+	digital_mark = models.PositiveIntegerField(default=0)

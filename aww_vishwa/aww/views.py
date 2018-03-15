@@ -8,7 +8,13 @@ def HomePage(request):
 	return render(request, "aww/home.html", {})
 
 def SubscribeUser(request):
-	return render(request, "aww/subscribe.html", {})
+	if request.method == 'POST':
+		form = SubscribeUserForm(request.POST)
+		if form.is_valid():
+			form.save()
+	else:
+		form = SubscribeUserForm()
+	return render(request, "aww/subscribe.html", {'form': SubscribeUserForm})
 
 def ListCirculars(request):
 	return render(request, "aww/circulars.html", {})

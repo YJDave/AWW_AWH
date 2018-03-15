@@ -28,7 +28,7 @@ admin_site_urlpatterns = [
     url(r'^logout/$', logout, name="admin_logout"),
     url(r'^centers/$', ListCenters, name="admin_list_centers"),
     url(r'^centers/(?P<center_id>[\d]+)$', CenterInfo, name="admin_center"),
-    url(r'^centers/(?P<center_id>[\d]+)/applications$', CenterApplications,
+    url(r'^centers/(?P<center_id>[\d]+)/applications/$', CenterApplications,
     	name="admin_applications"),
     url(r'^centers/(?P<center_id>[\d]+)/applications/(?P<application_id>[\d]+)/$', ApplicationInfo,
     	name="admin_applications"),
