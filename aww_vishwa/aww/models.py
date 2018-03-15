@@ -6,31 +6,40 @@ class Center(models.Model):
 	name = models.CharField(max_length=250)
 	address = models.CharField(max_length=1000, default="", blank=True)
 
+	def __str__(self):
+		return self.name
+
 class Admin(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE)
 	center = models.ForeignKey(Center)
+	def __str__(self):
+		return self.name
 
 class Subscribers(models.Model):
 	phone_no = PhoneNumberField()
+	def __str__(self):
+		return str(self.phone_no)
 
 class Vacancy(models.Model):
-	center = models.OneToOneField(Center)
+	center = models.ForeignKey(Center)
 	created_date = models.DateTimeField(auto_now_add=True)
+	def __str__(self):
+		return str(self.center)
 
 class Application(models.Model):
-	center = models.OneToOneField(Center)
+	center = models.ForeignKey(Center)
 	POSITION_CHOICES = (
 		('w', "worker"),
-		('h', "heler"),
+		('h', "helper"),
 	)
 	for_position = models.CharField(max_length=1, choices=POSITION_CHOICES, default='w')
 	name = models.CharField(max_length=250)
 	phone_no = PhoneNumberField()
 	GRADUATION_CHOICES = (
-		('D', '7 pass'),
-		('C', '10 pass'),
-		('B', '12 pass'),
-		('A', 'graduate'),
+		('2', '7 pass'),
+		('3', '10 pass'),
+		('4', '12 pass'),
+		('5', 'graduate'),
 	)
 	graduation = models.CharField(max_length=1, choices=GRADUATION_CHOICES, default='D')
 	is_married = models.BooleanField(default=True)
@@ -38,8 +47,27 @@ class Application(models.Model):
 	area = models.CharField(max_length=300)
 	ward = models.CharField(max_length=300)
 	pincode = models.PositiveIntegerField(default=0)
-	has_birth_certi = models.BooleanField(default=False)
-	has_marriage_certi = models.BooleanField(default=False)
-	has_rashon_certi = models.BooleanField(default=False)
-	has_adhaar_certi = models.BooleanField(default=False)
+	has_birth_certificate = models.BooleanField(default=False)
+	has_marriage_certificate = models.BooleanField(default=False)
+	has_ration_card = models.BooleanField(default=False)
+	has_adhaar_card = models.BooleanField(default=False)
 	digital_mark = models.PositiveIntegerField(default=0)
+	is_selected = models.BooleanField(default=False)
+
+	def __str__(self):
+		return self.name
+
+	def save(self, *args, **kwargs):
+		self.digital_mark = int(self.graduation)
+		if (self.has_birth_certificate):
+			self.digital_mark += 2
+		if (self.has_marriage_certificate):
+			self.digital_mark += 2
+		if (self.has_ration_card):
+			self.digital_mark += 2
+		if (self.has_adhaar_card):
+			self.digital_mark += 2
+		if (not self.is_married):
+			self.digital_mark = 0
+		super(Application, self).save(*args, **kwargs)
+
