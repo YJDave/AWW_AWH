@@ -2,9 +2,39 @@ from django.db import models
 from django.contrib.auth.models import User
 from phonenumber_field.modelfields import PhoneNumberField
 
-class Center(models.Model):
+# FIXME: Change this to choice fields, dictionary, list
+# from modal.
+class State(models.Model):
 	name = models.CharField(max_length=250)
-	address = models.CharField(max_length=1000, default="", blank=True)
+
+	def __str__(self):
+		return self.name
+
+class District(models.Model):
+	state = models.ForeignKey(State)
+	name = models.CharField(max_length=250)
+
+	def __str__(self):
+		return self.name
+
+class Project(models.Model):
+	state = models.ForeignKey(State)
+	discrict = models.ForeignKey(District)
+	name = models.CharField(max_length=250)
+
+	def __str__(self):
+		return self.name
+
+class Center(models.Model):
+	state = models.ForeignKey(State)
+	discrict = models.ForeignKey(District)
+	project = models.ForeignKey(Project)
+	sector = models.PositiveIntegerField(default=0, blank=True)
+	pincode = models.PositiveIntegerField(default=0, blank=True)
+	name = models.CharField(max_length=250)
+	address = models.CharField(max_length=1000, default="")
+	logitude = models.PositiveIntegerField(default=0, blank=True)
+	latitude = models.PositiveIntegerField(default=0, blank=True)
 
 	def __str__(self):
 		return self.name
