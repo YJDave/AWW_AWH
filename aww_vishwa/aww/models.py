@@ -37,9 +37,9 @@ class Center(models.Model):
 	# TODO: Name should be primary key or combination of sector and name should
 	# be primary key.
 	name = models.CharField(max_length=250)
-	center_no = models.PositiveIntegerField(max_length=300)
+	center_no = models.PositiveIntegerField()
 	address = models.CharField(max_length=1000, default="")
-	logitude = models.PositiveIntegerField(default=0, blank=True)
+	longitude = models.PositiveIntegerField(default=0, blank=True)
 	latitude = models.PositiveIntegerField(default=0, blank=True)
 	W_vacancies = models.PositiveIntegerField(default=0, blank=True)
 	H_vacancies = models.PositiveIntegerField(default=0, blank=True)
@@ -50,9 +50,32 @@ class Center(models.Model):
 # FIXME: Improve admin model to map admin user to position.
 class Admin(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE)
-	center = models.ForeignKey(Center)
+	project = models.ForeignKey(Project)
 	def __str__(self):
 		return self.name
+
+# Child Development Project Officer
+class Admin_CDPO(models.Model):
+	admin = models.ForeignKey(Admin)
+	can_view = models.BooleanField(default=True)
+	can_select_for_interview = models.BooleanField(default=True)
+	can_select_for_position = models.BooleanField(default=False)
+	can_fianlize_selection = models.BooleanField(default=False)
+
+# Taluka Development officer
+class Admin_TDO(models.Model):
+	admin = models.ForeignKey(Admin)
+	can_view = models.BooleanField(default=True)
+	can_select_for_interview = models.BooleanField(default=True)
+	can_select_for_position = models.BooleanField(default=False)
+	can_fianlize_selection = models.BooleanField(default=False)
+
+class Admin_DeputyCollector(models.Model):
+	admin = models.ForeignKey(Admin)
+	can_view = models.BooleanField(default=True)
+	can_select_for_interview = models.BooleanField(default=True)
+	can_select_for_position = models.BooleanField(default=True)
+	can_fianlize_selection = models.BooleanField(default=True)	
 
 # TODO: As we will have numbers from India only, pre set +91 and allow user to
 # add other nos of phone no, rather than adding nos with +91.
