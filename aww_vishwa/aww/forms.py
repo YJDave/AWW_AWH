@@ -14,7 +14,7 @@ class SubscribeUserForm(forms.ModelForm):
 class ApplyForm(forms.ModelForm):
 	class Meta:
 		model = Application
-		fields = ("center", "for_position", "name", "phone_no", "graduation", "is_married", "village",
-			     "area", "ward", "pincode", "has_birth_certificate", "has_marriage_certificate", "has_ration_card",
-			     "has_adhaar_card")
+		fields = ("center", "for_position", "applicant_name", "phone_no", "graduation", "is_married",
+			      "has_birth_certificate", "has_marriage_certificate", "has_ration_card",
+			      "has_adhaar_card", "home_distance_from_center", "pincode_of_applicant")
 
