@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from phonenumber_field.modelfields import PhoneNumberField
 
+# TODO: Add model for circulars.
+
 # FIXME: Change this to choice fields, dictionary, list
 # from modal.
 # TODO: Write automated script to fill out states and districts on every new migrations

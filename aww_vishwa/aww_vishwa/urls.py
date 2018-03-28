@@ -22,6 +22,7 @@ from adminsite.views import (
 
 from django.contrib.auth.views import login, logout
 
+# TODO: Add views for reset/forgot password.
 admin_site_urlpatterns = [
     url(r'^$', AdminHomePage, name="admin_home_page"),
     url(r'^login/$', login, name="admin_login"),
