@@ -7,6 +7,9 @@ from aww.models import (
 	Subscribers,
 	Application,
 	Project,
+	Admin,
+	State,
+	District,
 )
 # Register your models here.
 
@@ -23,3 +26,6 @@ admin.site.register(Subscribers)
 admin.site.register(Application, ApplicationAdmin)
 admin.site.register(Center)
 admin.site.register(Project)
+admin.site.register(Admin)
+admin.site.register(State)
+admin.site.register(District)
