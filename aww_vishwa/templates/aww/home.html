@@ -1,19 +1,20 @@
 {% extends 'aww/base.html' %}
+{% load i18n %}
 {% block content %}
 <table align="center">
   <tbody><tr>
     <td>
-    <h1>What's new?</h1>
+    <h1>{% blocktrans %}What's new?{% endblocktrans %}</h1>
   </td>
   </tr>
   <tr>
     <td rowspan="3">
   <marquee direction="up" onmouseover="this.stop();" onmouseout="this.start();" scrolldelay="100">
-    <a href="http://www.wcd.nic.in/notification/recruitment-vacancies">New Vacancies out</a>
+    <a href="http://www.wcd.nic.in/notification/recruitment-vacancies">{% trans "New Vacancies out" %}</a>
     <br>
-    <a href="http://www.thehindu.com/news/cities/Delhi/govt-doubles-salary-of-anganwadi-workers/article19333885.ece">Govt.doubles the salary-of-anganwadi-workers</a>
+    <a href="http://www.thehindu.com/news/cities/Delhi/govt-doubles-salary-of-anganwadi-workers/article19333885.ece">{% trans "Govt.doubles the salary-of-anganwadi-workers" %}</a>
     <br>
-    <a href="http://indianexpress.com/article/cities/ahmedabad/gujarat-anganwadi-workers-seek-pay-hike-to-go-on-3-day-strike-4525288/">Gujarat: Anganwadi workers seek pay hike, to go on 3-day strike</a>
+    <a href="http://indianexpress.com/article/cities/ahmedabad/gujarat-anganwadi-workers-seek-pay-hike-to-go-on-3-day-strike-4525288/">{% trans "Gujarat: Anganwadi workers seek pay hike, to go on 3-day strike" %}</a>
     <br>
   </marquee></td>
 </tr>
