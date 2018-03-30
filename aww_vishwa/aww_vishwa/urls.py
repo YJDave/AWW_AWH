@@ -10,7 +10,8 @@ from aww.views import (
 	VacancyResult,
 	ListEligibility,
 	ListLearningMaterials,
-	Schemes,
+  Guidelines,
+  Schemes,
     ContactUs,
 )
 
@@ -45,10 +46,11 @@ urlpatterns = [
     url(r'^circulars/$', ListCirculars, name="circulars"),
     url(r'^vacancies/$', ListVacancies, name="vacancies"),
     url(r'^apply/$', ApplyForVacancy, name="apply"),
+    url(r'^guidelines/$', Guidelines, name="guidelines"),
     url(r'^results/$', ListVacancyResults, name="results"),
     url(r'^results/(?P<result_id>[\d]+)/$', VacancyResult, name="results"),
     url(r'^eligibility/$', ListEligibility, name="eligibility"),
     url(r'^learning-materials/$', ListLearningMaterials, name="learning_materials"),
-	url(r'^schemes/$', Schemes, name="schemes"),
+	  url(r'^schemes/$', Schemes, name="schemes"),
     url(r'^contact-us/$', ContactUs, name="contact_us"),
 ]
