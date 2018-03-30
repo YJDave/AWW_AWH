@@ -1,12 +1,24 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth import views
-from aww.models import Application
+from django.contrib.auth.decorators import login_required
+from aww.models import (
+	Application,
+	Center,
+	Admin,
+)
 
+login_url = "/login/"
+
+@login_required(login_url=login_url)
 def AdminHomePage(request):
 	return render(request, "admin/home.html", {})
 
+@login_required(login_url=login_url)
 def ListCenters(request):
-	return render(request, "admin/centers.html", {})
+	user = get_object_or_404(Admin, user=request.user)
+	user_project = user.project
+	centers = Center.objects.filter(project=user_project)
+	return render(request, "admin/centers.html", {"centers": centers})
 
 def CenterInfo(request, center_id):
 	return render(request, "admin/center.html", {})

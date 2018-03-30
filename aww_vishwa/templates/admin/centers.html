@@ -1,2 +1,12 @@
 <h3>List of all centers avaliable...</h3>
 <h3>By clicking on any center, it should redirect to specific center page.</h3>
+
+{% for center in centers %}
+<a href="/accounts/centers/{{ center.id }}/">
+	<h5>{{ center.center_no }}</h5>
+	<h5>{{ center.name }}</h5>
+	<h5>{{ center.address }}</h5>
+	<button>See all applications</button>
+</a>
+	<h3>=============</h3>
+{% endfor %}
