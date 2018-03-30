@@ -10,6 +10,7 @@ from aww.views import (
 	VacancyResult,
 	ListEligibility,
 	ListLearningMaterials,
+	Schemes,
 )
 
 from adminsite.views import (
@@ -47,4 +48,5 @@ urlpatterns = [
     url(r'^results/(?P<result_id>[\d]+)/$', VacancyResult, name="results"),
     url(r'^eligibility/$', ListEligibility, name="eligibility"),
     url(r'^learning-materials/$', ListLearningMaterials, name="learning_materials"),
+	url(r'^schemes/$', Schemes, name="schemes"),
 ]
