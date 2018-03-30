@@ -31,5 +31,7 @@ def CenterApplications(request, center_id):
 	applications = Application.objects.filter(center=center)
 	return render(request, "admin/applications.html", {'applications': applications})
 
+@login_required(login_url=login_url)
 def ApplicationInfo(request, center_id, application_id):
-	return render(request, "admin/application.html", {})
+	application = get_object_or_404(Application, id=application_id)
+	return render(request, "admin/application.html", {"application": application})

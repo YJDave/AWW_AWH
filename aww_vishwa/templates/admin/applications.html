@@ -3,7 +3,7 @@
 to filter out the application by their type, i.e. selected/selected-for-interview/selected-final etc.</h3>
 
 {% for app in applications %}
-	<a href='{{app.id}}/'>{{ app.name }}</a>
+	<a href='{{app.id}}/'>{{ app.applicant_name }}</a>
 	<h4>{{ app.center }}</h4>
 	<h4>{{ app.digital_mark }}</h4>
 {% endfor %}
