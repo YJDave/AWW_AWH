@@ -3,7 +3,9 @@
 <center><h1 style="font-family: sans-serif;">Application Form</h1></center>
 <form method="post" class="form-horizontal">{% csrf_token %}
 	<div class="form-group">
+		 <div class="col-sm-10">
 	{{ form.as_p }}
+</div>
 	</div>
 <button type="submit">Apply for job</button>
 </form>
