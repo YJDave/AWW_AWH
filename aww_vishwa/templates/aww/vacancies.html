@@ -1,3 +1,19 @@
+{% extends 'aww/base.html' %} 
+{% block content %}
+
 <h3>It should list all vacancies of all aanganwadi centers</h3>
-<h3>And also button to apply for vacancy, which should redirect them to apply
-page for application.</h3>
+<h3>And also button to apply for vacancy, which should redirect them to apply page for application.</h3>
+
+<!-- Could make a table where it contains all the details and 
+    number of vacancies for the center -->
+<h2>List of Anganwadi Centers</h2>
+
+<ul>
+    {% for c in centerName %}
+        <li>{{ c }}</li>
+    {% endfor %}
+</ul>
+
+
+{% endblock %}
+
