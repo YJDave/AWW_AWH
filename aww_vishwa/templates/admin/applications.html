@@ -1,6 +1,9 @@
-<h3>List of all applications user has submitted for specific aaganwadi center</h3>
-<h3>It should also display buttons to select application and should also include filters
-to filter out the application by their type, i.e. selected/selected-for-interview/selected-final etc.</h3>
+<table border="1" width="50%">
+	<tr>
+		<td>Applicant's Name</td>
+		<td>Applicant's Center</td>
+		<td>Applicant's Marks</td>
+	</tr>
 
 <button>Submitted</button>
 <button>Selected for interview</button>
@@ -9,11 +12,13 @@ to filter out the application by their type, i.e. selected/selected-for-intervie
 <button>Call all finally selected candidates</button>
 <br />
 {% for app in applications %}
-	<a href='{{ app.id }}/'>{{ app.applicant_name }}</a>
-	<h4>{{ app.center }}</h4>
-	<h4>{{ app.digital_mark }}</h4>
+<tr>
+	<td><a href='{{app.id}}/'>{{ app.applicant_name }}</a></td>
+	<td>{{ app.center }}</td>
+	<td>{{ app.digital_mark }}</td>
 	<button>Select for interview</button>
 	<button>Select finally</button>
+</tr>
 {% endfor %}
 <button>Archive</button>
 <button>Print</button>
