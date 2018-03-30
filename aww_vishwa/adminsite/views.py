@@ -20,12 +20,18 @@ def ListCenters(request):
 	centers = Center.objects.filter(project=user_project)
 	return render(request, "admin/centers.html", {"centers": centers})
 
+@login_required(login_url=login_url)
 def CenterInfo(request, center_id):
-	return render(request, "admin/center.html", {})
+	center = get_object_or_404(Center, id=center_id)
+	return render(request, "admin/center.html", {"center": center})
 
+@login_required(login_url=login_url)
 def CenterApplications(request, center_id):
-	all_applications = Application.objects.all()
-	return render(request, "admin/applications.html", {'applications': all_applications})
+	center = get_object_or_404(Center, id=center_id)
+	applications = Application.objects.filter(center=center)
+	return render(request, "admin/applications.html", {'applications': applications})
 
+@login_required(login_url=login_url)
 def ApplicationInfo(request, center_id, application_id):
-	return render(request, "admin/application.html", {})
+	application = get_object_or_404(Application, id=application_id)
+	return render(request, "admin/application.html", {"application": application})
