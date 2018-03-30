@@ -28,24 +28,8 @@
 		</ul>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="active1"><a href="{% url 'home_page' %}">Home</a></li>
-				<li><a href="{% url 'apply' %}">Apply</a></li>
-				<li><a href="{% url 'guidelines' %}">Guide Lines</a></li>
-				<li><a href="{% url 'schemes' %}">Schemes</a></li>
-				<li><a href="{% url 'eligibility' %}">Eligibility</a></li>
-				<li><a href="{% url 'learning_materials' %}">Learning Materials</a></li>
-				<li><a href="{% url 'circulars' %}">Circulars</a></li>
-				<li><a href="{% url 'vacancies' %}">Vacancies</a></li>
-				<li><a href="{% url 'results' %}">Results</a></li>
-				<li><a href="{% url 'contact_us' %}">Contact Us</a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<!--<li><a href="#">Signup
-					<i class="fa fa-user-plus" aria-hidden="true"></i></a>
-				</li>-->
-				<li><a href="{% url 'admin_login' %}">Admin Login
-					<i class="fa fa-user" aria-hidden="true"></i></a>
-				</li>
+				<li><a href="{% url 'admin_home_page' %}">Home</a></li>
+				<li><a href="{% url 'admin_list_centers' %}">Centers</a></li>
 			</ul>
 	</div>
 </nav>
