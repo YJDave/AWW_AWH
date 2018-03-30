@@ -2,9 +2,18 @@
 <h3>It should also display buttons to select application and should also include filters
 to filter out the application by their type, i.e. selected/selected-for-interview/selected-final etc.</h3>
 
+<button>Submitted</button>
+<button>Selected for interview</button>
+<button>Selected finally</button>
+<button>Call all selected candidates for interview</button>
+<button>Call all finally selected candidates</button>
+<br />
 {% for app in applications %}
-	<a href='{{app.id}}/'>{{ app.applicant_name }}</a>
+	<a href='{{ app.id }}/'>{{ app.applicant_name }}</a>
 	<h4>{{ app.center }}</h4>
 	<h4>{{ app.digital_mark }}</h4>
+	<button>Select for interview</button>
+	<button>Select finally</button>
 {% endfor %}
-
+<button>Archive</button>
+<button>Print</button>
