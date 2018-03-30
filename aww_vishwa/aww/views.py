@@ -43,3 +43,6 @@ def ListEligibility(request):
 
 def ListLearningMaterials(request):
 	return render(request, "aww/learning-materials.html", {})
+
+def Guidelines(request):
+	return render(request, "aww/guidelines.html", {})
