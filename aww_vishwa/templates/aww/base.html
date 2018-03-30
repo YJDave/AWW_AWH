@@ -29,6 +29,7 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li class="active1"><a href="{% url 'home_page' %}">Home</a></li>
+				<li><a href="{% url 'apply' %}">Apply</a></li>
 				<li><a href="{% url 'guidelines' %}">Guide Lines</a></li>
 				<li><a href="{% url 'schemes' %}">Schemes</a></li>
 				<li><a href="{% url 'eligibility' %}">Eligibility</a></li>
@@ -66,7 +67,7 @@
   	$('default .navbar-nav > li > a').on('click', function(e) {
    	$('.nav.navbar-nav > li > a').removeClass('active');
    	$(this).addClass('active');
-	}); 
+	});
 </script>
 
 
