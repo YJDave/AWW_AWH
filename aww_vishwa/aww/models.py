@@ -31,7 +31,7 @@ class Project(models.Model):
 
 class Center(models.Model):
 	state = models.ForeignKey(State)
-	discrict = models.ForeignKey(District)
+	district = models.ForeignKey(District)
 	project = models.ForeignKey(Project)
 	sector = models.PositiveIntegerField()
 	# TODO: Add validations in pincode field.
@@ -133,16 +133,16 @@ class Application(models.Model):
 	# from others applications.
 	# TODO: Wring eligible function, which returns whether applicant is eligible
 	# for given position or not.
-	def save(self, *args, **kwargs):
-		self.digital_mark = int(self.graduation)
-		if (self.has_birth_certificate):
-			self.digital_mark += 2
-		if (self.has_marriage_certificate):
-			self.digital_mark += 2
-		if (self.has_ration_card):
-			self.digital_mark += 2
-		if (self.has_adhaar_card):
-			self.digital_mark += 2
-		if (not self.is_married):
-			self.digital_mark = 0
-		super(Application, self).save(*args, **kwargs)
+	# def save(self, *args, **kwargs):
+	# 	self.digital_mark = int(self.graduation)
+	# 	if (self.has_birth_certificate):
+	# 		self.digital_mark += 2
+	# 	if (self.has_marriage_certificate):
+	# 		self.digital_mark += 2
+	# 	if (self.has_ration_card):
+	# 		self.digital_mark += 2
+	# 	if (self.has_adhaar_card):
+	# 		self.digital_mark += 2
+	# 	if (not self.is_married):
+	# 		self.digital_mark = 0
+	# 	super(Application, self).save(*args, **kwargs)
