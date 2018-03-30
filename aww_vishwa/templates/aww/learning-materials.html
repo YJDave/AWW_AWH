@@ -1,74 +1,46 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>AWW & AWH Recruitment</title>
+{% extends 'aww/base.html' %}
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Lato:700" rel="stylesheet">
-	<link rel="stylesheet" href="{% static 'css/base.css' %}">
-	<link rel="stylesheet" href="{% static 'css/learning-material.css' %}">
-</head>
-<body>
-	<img src="http://jobsamosa.com/wp-content/uploads/2014/10/Ministry-of-Women-Child-Development-Recruitment-2014.jpg" alt="" class="img-rounded">
-	<span id="heading">Anganwadi Workers & Helpers Recruitment</span>
-	<img src="https://english.newstracklive.com/uploads/education-news/job-search-news/Jun/19/big_thumb/18-1452011456_5947524170597_5947b0b8f0a6a.jpg" alt="" class="img-rounded">
+	{% block content%}
 
-<nav class="navbar navbar-default">
-	<div class="container">
-		<ul class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a href="#" class="navbar-brand">GirlsWhoHack</a>
-		</ul>
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Home</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Contact</a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#">Signup
-					<i class="fa fa-user-plus" aria-hidden="true"></i></a>
-				</li>
-				<li><a href="#">Login
-					<i class="fa fa-user" aria-hidden="true"></i></a>
-				</li>		
-			</ul>
-	</div>	
-</nav>
+		<h1 align = 'center'>LEARNING MATERIALS</h1>
 
-<div id="videos">
-	<iframe width="430" height="280" src="https://www.youtube.com/embed/a1iXuYvDcIY" frameborder="0" allow="autoplay; encrypted-media"  allowfullscreen></iframe>
+		<ul>
 
-	<iframe width="430" height="280" src="https://www.youtube.com/embed/AONXWCUkPos" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-</div>
+		<li><h3>Handbook for Anganwadi Workers</h3>&nbsp-&nbsp<a href="http://nipccd.nic.in/syllabi/eaw.pdf">Click here to download</a>
 
-<footer>
-	Copyright 2018. Girls Who Hack.
-</footer>
+		<br>Handbook for Anganwadi Workers is an illustrative pictorial guide written in simple language.
+		In order to improve her performance, there is a need fro providing her with comprehensive and
+		handy document which she can refer to in conducting her day-to-day activities.<br>
 
-<script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+		</li>
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
+		<li><h3>Guidelines for Anganwadi Helpers</h3>&nbsp-&nbsp<a href="http://www.chinh.in/2013%20CIKFF/WCD%20Research%20for%20WEB%20UPLOAD%202013/Anganwadis%20Report%20Part%202.pdf">Click here to download</a>
+
+		<br>This study aims to understand, explore and evaluate the preschool education program with respect to
+		the tools used by Anganwadi helpers to impart the same under Standards and the guidelines for Preschool
+		Learning Experiences reflected under ICDS’s commitment to quality, in order to ensure a solid foundation for
+		learning and school success. <br>
+
+		</li>
+
+		<li><h3>Guidelines for Anganwadi Workers</h3>&nbsp-&nbsp<a href="http://www.chinh.in/2013%20CIKFF/WCD%20Research%20for%20WEB%20UPLOAD%202013/Anganwadis%20Report%20Part%201.pdf">Click here to download</a>
+
+		<br>This study aims to understand, explore and evaluate the preschool education program with respect to
+		the tools used by Anganwadi workers to impart the same under Standards and the guidelines for Preschool
+		Learning Experiences reflected under ICDS’s commitment to quality, in order to ensure a solid foundation for
+		learning and school success. <br>
+
+		</li>
+
+		<li><h3>Training Module for Anganwadi Workers</h3>&nbsp-&nbsp<a href="http://wcd.nic.in/sites/default/files/EEC%20Training%20Module%20for%20Anganwadi%20Workers.pdf">Click here to download</a>
+
+			<br>This training module is part of the job training module for Anganwadi Workers and focuses
+			only on the early childhood care and education (ECCE) part of the training. It  is  designed  to
+			provide  the  Anganwadi  Worker  a  basic  understanding  of  the  ECCE curriculum  and
+			pedagogical  approaches  to  ensure  optimal  and  holistic  development  of young children.<br>
+			
+		</li>
 
 
-</body>
-</html>
 
-
-<!-- <h3>worker and helper job, etc.</h3>
-<h3>NOTE: It should not include how to use website for admin, as this page can be accessible by
-anyone, so include guidelines only for normal user.</h3>
-<h3>Mostly static website, in local language vioes/doc etc.</h3> -->
-
+	{% endblock %}

@@ -28,9 +28,15 @@
 		</ul>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Home</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Contact</a></li>
+				<li class="active1"><a href="{% url 'home_page' %}">Home</a></li>
+				<li><a href="{% url 'guidelines' %}">Guide Lines</a></li>
+				<li><a href="{% url 'schemes' %}">Schemes</a></li>
+				<li><a href="{% url 'eligibility' %}">Eligibility</a></li>
+				<li><a href="{% url 'learning_materials' %}">Learning Materials</a></li>
+				<li><a href="{% url 'circulars' %}">Circulars</a></li>
+				<li><a href="{% url 'vacancies' %}">Vacancies</a></li>
+				<li><a href="{% url 'results' %}">Results</a></li>
+				<li><a href="{% url 'contact_us' %}">Contact Us</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#">Signup
@@ -56,6 +62,12 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript">
+  	$('default .navbar-nav > li > a').on('click', function(e) {
+   	$('.nav.navbar-nav > li > a').removeClass('active');
+   	$(this).addClass('active');
+	}); 
+</script>
 
 
 </body>
