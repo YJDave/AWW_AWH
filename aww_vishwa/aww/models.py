@@ -54,7 +54,7 @@ class Admin(models.Model):
 	user = models.ForeignKey(User)
 	project = models.ForeignKey(Project)
 	def __str__(self):
-		return self.name
+		return str(self.user)
 
 # Child Development Project Officer
 class Admin_CDPO(models.Model):
