@@ -51,7 +51,7 @@ class Center(models.Model):
 
 # FIXME: Improve admin model to map admin user to position.
 class Admin(models.Model):
-	user = models.OneToOneField(User, on_delete=models.CASCADE)
+	user = models.ForeignKey(User)
 	project = models.ForeignKey(Project)
 	def __str__(self):
 		return self.name
