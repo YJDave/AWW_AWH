@@ -123,7 +123,7 @@ class Application(models.Model):
 	is_selected_for_position = models.BooleanField(default=False)
 
 	def __str__(self):
-		return self.name
+		return self.applicant_name
 
 	# TODO: Change this digital marking system.
 	# Wring digital marking function sepretly and call it here on save.
