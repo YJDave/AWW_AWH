@@ -11,8 +11,15 @@ img{
 	background-color: #e7e7e7;
 }
 
+.navbar-right{
+	margin-right: 5%;	
+}
+
 #heading{
 	font-weight: bold;
 	font-size: 30px;
 	margin: 10px 17%;
+}
+.active1{
+	color: red;
 }

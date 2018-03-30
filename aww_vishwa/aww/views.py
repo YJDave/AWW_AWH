@@ -46,3 +46,6 @@ def ListLearningMaterials(request):
 
 def Schemes(request):
 	return render(request,"aww/schemes.html",{})
+
+def ContactUs(request):
+	return render(request,"aww/contact-us.html",{})

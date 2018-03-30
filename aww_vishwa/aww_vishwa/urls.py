@@ -11,6 +11,7 @@ from aww.views import (
 	ListEligibility,
 	ListLearningMaterials,
 	Schemes,
+    ContactUs,
 )
 
 from adminsite.views import (
@@ -49,4 +50,5 @@ urlpatterns = [
     url(r'^eligibility/$', ListEligibility, name="eligibility"),
     url(r'^learning-materials/$', ListLearningMaterials, name="learning_materials"),
 	url(r'^schemes/$', Schemes, name="schemes"),
+    url(r'^contact-us/$', ContactUs, name="contact_us"),
 ]
