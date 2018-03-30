@@ -23,7 +23,7 @@ class District(models.Model):
 
 class Project(models.Model):
 	state = models.ForeignKey(State)
-	discrict = models.ForeignKey(District)
+	district = models.ForeignKey(District)
 	name = models.CharField(max_length=250)
 
 	def __str__(self):
