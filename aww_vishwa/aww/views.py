@@ -4,6 +4,7 @@ from .forms import (
 	SubscribeUserForm,
 	ApplyForm,
 )
+from .models import Center
 
 def HomePage(request):
 	return render(request, "aww/home.html", {})
@@ -21,7 +22,18 @@ def ListCirculars(request):
 	return render(request, "aww/circulars.html", {})
 
 def ListVacancies(request):
-	return render(request, "aww/vacancies.html", {})
+	centerName = Center.name
+	sectorName = Center.sector
+	stateList = Center.state
+	districtList = Center.discrict
+	projectList = Center.project
+	workerVacancies = Center.W_vacancies
+	helperVacancies = Center.H_vacancies
+
+	return render(request, "aww/vacancies.html", {'centerName':centerName, 
+	'sectorName':sectorName, 'stateList':stateList,'districtList':districtList,
+	'projectList':projectList,'workerVacancies':workerVacancies, 
+	'helperVacancies':helperVacancies})
 
 def ApplyForVacancy(request):
 	if request.method == 'POST':
@@ -36,6 +48,7 @@ def ListVacancyResults(request):
 	return render(request, "aww/results.html", {})
 
 def VacancyResult(request, result_id):
+	
 	return render(request, "aww/result.html", {})
 
 def ListEligibility(request):
