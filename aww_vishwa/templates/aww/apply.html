@@ -1,7 +1,10 @@
  {% extends 'aww/base.html' %}
 {% block content %}
-<form method="post">{% csrf_token %}
-{{ form.as_p }}
+<center><h1 style="font-family: sans-serif;">Application Form</h1></center>
+<form method="post" class="form-horizontal">{% csrf_token %}
+	<div class="form-group">
+	{{ form.as_p }}
+	</div>
 <button type="submit">Apply for job</button>
 </form>
 {% endblock %}
