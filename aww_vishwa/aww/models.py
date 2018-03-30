@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from phonenumber_field.modelfields import PhoneNumberField
+from django.utils.translation import ugettext_lazy as _
 
 # TODO: Add model for circulars.
 
@@ -88,31 +89,32 @@ class Subscribers(models.Model):
 
 class Application(models.Model):
 	POSITION_CHOICES = (
-		('w', "worker"),
-		('h', "helper"),
+		('w', _("worker")),
+		('h', _("helper")),
 	)
 	GRADUATION_CHOICES = (
-		('2', '7 pass'),
-		('3', '10 pass'),
-		('4', '12 pass'),
-		('5', 'graduate'),
+		('2', _('7 pass')),
+		('3', _('10 pass')),
+		('4', _('12 pass')),
+		('5', _('graduate')),
 	)
 
 	# In form, it should let user select first state, district and project and then
 	# let them select center.
-	center = models.ForeignKey(Center)
-	for_position = models.CharField(max_length=1, choices=POSITION_CHOICES, default='w')
-	applicant_name = models.CharField(max_length=250)
+	center = models.ForeignKey(Center, verbose_name=_("Select AWC you want to apply"))
+	for_position = models.CharField(_("For position"), max_length=1, choices=POSITION_CHOICES, default='w')
+	applicant_name = models.CharField(_("Your name"), max_length=250)
 	# TODO: Same here for phone number field.
-	phone_no = PhoneNumberField()
-	graduation = models.CharField(max_length=1, choices=GRADUATION_CHOICES, default='D')
-	is_married = models.BooleanField(default=True)
-	home_distance_from_center = models.PositiveIntegerField(default=0)
-	pincode_of_applicant = models.PositiveIntegerField(default=0)
-	has_birth_certificate = models.BooleanField(default=False)
-	has_marriage_certificate = models.BooleanField(default=False)
-	has_ration_card = models.BooleanField(default=False)
-	has_adhaar_card = models.BooleanField(default=False)
+	phone_no = PhoneNumberField(_("Phone no"))
+	graduation = models.CharField(_("Graduation completion"), max_length=1, choices=GRADUATION_CHOICES, default='D')
+	is_married = models.BooleanField(_("Are you married?"), default=True)
+	home_distance_from_center = models.PositiveIntegerField(
+		_("Distance between your residence and AWC you are applying"), default=0)
+	pincode_of_applicant = models.PositiveIntegerField(_("Pincode of your residence"), default=0)
+	has_birth_certificate = models.BooleanField(_("Do you have birth certificate?"), default=False)
+	has_marriage_certificate = models.BooleanField(_("Do you have marriage certificate?"), default=False)
+	has_ration_card = models.BooleanField(_("Do you have ration card?"), default=False)
+	has_adhaar_card = models.BooleanField(_("Do you ADHAAR card?"), default=False)
 	digital_mark = models.PositiveIntegerField(default=0)
 	# Is applicant selected for interview?
 	is_selected_for_interview = models.BooleanField(default=False)
@@ -133,16 +135,16 @@ class Application(models.Model):
 	# from others applications.
 	# TODO: Wring eligible function, which returns whether applicant is eligible
 	# for given position or not.
-	# def save(self, *args, **kwargs):
-	# 	self.digital_mark = int(self.graduation)
-	# 	if (self.has_birth_certificate):
-	# 		self.digital_mark += 2
-	# 	if (self.has_marriage_certificate):
-	# 		self.digital_mark += 2
-	# 	if (self.has_ration_card):
-	# 		self.digital_mark += 2
-	# 	if (self.has_adhaar_card):
-	# 		self.digital_mark += 2
-	# 	if (not self.is_married):
-	# 		self.digital_mark = 0
-	# 	super(Application, self).save(*args, **kwargs)
+	def save(self, *args, **kwargs):
+		self.digital_mark = int(self.graduation)
+		if (self.has_birth_certificate):
+			self.digital_mark += 2
+		if (self.has_marriage_certificate):
+			self.digital_mark += 2
+		if (self.has_ration_card):
+			self.digital_mark += 2
+		if (self.has_adhaar_card):
+			self.digital_mark += 2
+		if (not self.is_married):
+			self.digital_mark = 0
+		super(Application, self).save(*args, **kwargs)

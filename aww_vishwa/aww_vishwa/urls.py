@@ -24,6 +24,7 @@ from adminsite.views import (
 )
 
 from django.contrib.auth.views import login, logout
+from django.conf.urls.i18n import i18n_patterns
 
 # TODO: Add views for reset/forgot password.
 admin_site_urlpatterns = [
@@ -38,7 +39,7 @@ admin_site_urlpatterns = [
     	name="admin_applications"),
 ]
 
-urlpatterns = [
+urlpatterns = i18n_patterns(
     url(r'^admin/', admin.site.urls),
     url(r'^$', HomePage, name="home_page"),
     url(r'^accounts/', include(admin_site_urlpatterns), name="admin_urls"),
@@ -53,4 +54,4 @@ urlpatterns = [
     url(r'^learning-materials/$', ListLearningMaterials, name="learning_materials"),
 	  url(r'^schemes/$', Schemes, name="schemes"),
     url(r'^contact-us/$', ContactUs, name="contact_us"),
-]
+)

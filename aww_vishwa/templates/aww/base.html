@@ -1,9 +1,10 @@
 {% load staticfiles %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>AWW & AWH Recruitment</title>
+	<title>{% blocktrans %}AWW & AWH Recruitment{% endblocktrans %}</title>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -12,7 +13,7 @@
 </head>
 <body>
 	<img src="http://jobsamosa.com/wp-content/uploads/2014/10/Ministry-of-Women-Child-Development-Recruitment-2014.jpg" alt="" class="img-rounded">
-	<span id="heading">Anganwadi Workers & Helpers Recruitment</span>
+	<span id="heading">{% trans "Anganwadi Workers & Helpers Recruitment" %}</span>
 	<img src="https://english.newstracklive.com/uploads/education-news/job-search-news/Jun/19/big_thumb/18-1452011456_5947524170597_5947b0b8f0a6a.jpg" alt="" class="img-rounded">
 
 <nav class="navbar navbar-default">
@@ -28,22 +29,22 @@
 		</ul>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="active1"><a href="{% url 'home_page' %}">Home</a></li>
-				<li><a href="{% url 'apply' %}">Apply</a></li>
-				<li><a href="{% url 'guidelines' %}">Guide Lines</a></li>
-				<li><a href="{% url 'schemes' %}">Schemes</a></li>
-				<li><a href="{% url 'eligibility' %}">Eligibility</a></li>
-				<li><a href="{% url 'learning_materials' %}">Learning Materials</a></li>
-				<li><a href="{% url 'circulars' %}">Circulars</a></li>
-				<li><a href="{% url 'vacancies' %}">Vacancies</a></li>
-				<li><a href="{% url 'results' %}">Results</a></li>
-				<li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+				<li class="active1"><a href="{% url 'home_page' %}">{% trans "Home" %}</a></li>
+				<li><a href="{% url 'apply' %}">{% trans "Apply" %}</a></li>
+				<li><a href="{% url 'guidelines' %}">{% trans "Guide Lines" %}</a></li>
+				<li><a href="{% url 'schemes' %}">{% trans "Schemes" %}</a></li>
+				<li><a href="{% url 'eligibility' %}">{% trans "Eligibility" %}</a></li>
+				<li><a href="{% url 'learning_materials' %}">{% trans "Learning Materials" %}</a></li>
+				<li><a href="{% url 'circulars' %}">{% trans "Circulars" %}</a></li>
+				<li><a href="{% url 'vacancies' %}">{% trans "Vacancies" %}</a></li>
+				<li><a href="{% url 'results' %}">{% trans "Results" %}</a></li>
+				<li><a href="{% url 'contact_us' %}">{% trans "Contact Us" %}</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<!--<li><a href="#">Signup
 					<i class="fa fa-user-plus" aria-hidden="true"></i></a>
 				</li>-->
-				<li><a href="{% url 'admin_login' %}">Admin Login
+				<li><a href="{% url 'admin_login' %}">{% trans "Admin Login" %}
 					<i class="fa fa-user" aria-hidden="true"></i></a>
 				</li>
 			</ul>
