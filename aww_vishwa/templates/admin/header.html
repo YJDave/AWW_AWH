@@ -29,23 +29,15 @@
 		</ul>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="active1"><a href="{% url 'home_page' %}">{% trans "Home" %}</a></li>
-				<li><a href="{% url 'apply' %}">{% trans "Apply" %}</a></li>
-				<li><a href="{% url 'guidelines' %}">{% trans "Guide Lines" %}</a></li>
-				<li><a href="{% url 'schemes' %}">{% trans "Schemes" %}</a></li>
-				<li><a href="{% url 'eligibility' %}">{% trans "Eligibility" %}</a></li>
-				<li><a href="{% url 'learning_materials' %}">{% trans "Learning Materials" %}</a></li>
-				<li><a href="{% url 'circulars' %}">{% trans "Circulars" %}</a></li>
-				<li><a href="{% url 'vacancies' %}">{% trans "Vacancies" %}</a></li>
-				<li><a href="{% url 'results' %}">{% trans "Results" %}</a></li>
-				<li><a href="{% url 'contact_us' %}">{% trans "Contact Us" %}</a></li>
+				<li class="active1"><a href="{% url 'admin_home_page' %}">Home</a></li>
+				<li><a href="{% url 'admin_list_centers' %}">Centers</a></li>
+				<li><a href="{% url 'admin_list_centers' %}">Applications</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<!--<li><a href="#">Signup
 					<i class="fa fa-user-plus" aria-hidden="true"></i></a>
 				</li>-->
-				<li><a href="{% url 'admin_login' %}">{% trans "Admin Login" %}
-					<i class="fa fa-user" aria-hidden="true"></i></a>
+				<li><a href="#"><i class="fa fa-user" aria-hidden="true">Logout</i></a>
 				</li>
 			</ul>
 	</div>
@@ -53,7 +45,7 @@
 {% block content %}
 {% endblock %}
 
-<footer style="padding-bottom: 50px; padding-top: 50px; text-align: center;">
+<footer style="text-align: center; padding-bottom: 50px; padding-top: 50px;">
 	Copyright 2018. Girls Who Hack.
 </footer>
 
@@ -64,13 +56,6 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script type="text/javascript">
-  	$('default .navbar-nav > li > a').on('click', function(e) {
-   	$('.nav.navbar-nav > li > a').removeClass('active');
-   	$(this).addClass('active');
-	});
-</script>
-
 
 </body>
 </html>
