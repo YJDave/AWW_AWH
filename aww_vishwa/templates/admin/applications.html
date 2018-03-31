@@ -1,3 +1,6 @@
+{% extends 'admin/header.html' %}
+{% load i18n %}
+{% block content %}
 <table border="1" width="50%">
 	<tr>
 		<td>Applicant's Name</td>
@@ -22,3 +25,4 @@
 {% endfor %}
 <button>Archive</button>
 <button>Print</button>
+{% endblock %}
