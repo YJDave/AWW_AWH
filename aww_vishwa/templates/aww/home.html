@@ -1,15 +1,22 @@
 {% extends 'aww/base.html' %}
 {% load i18n %}
 {% block content %}
+
 <table align="center">
-  <tbody><tr>
-    <td>
-    <h1>{% blocktrans %}What's new?{% endblocktrans %}</h1>
-  </td>
+    <tr border="1">
+      <td>
+    <!-- <h1>{% blocktrans %}What's new?{% endblocktrans %}</h1> -->
+      </td>
+      <br>
+      <br>
+      <div style="padding-left:400px;padding-right:400px;">
+          <div class="text-white bg-info" ><u><i><b><h1 style="padding-left:100px" >What's new?</h1></b></i></u></div>
+      </div>   
+    </td>
   </tr>
   <tr>
-    <td rowspan="3">
-  <marquee direction="up" onmouseover="this.stop();" onmouseout="this.start();" scrolldelay="100">
+  <td rowspan="3">
+  <marquee direction="up" onmouseover="this.stop();" onmouseout="this.start();" scrolldelay="150">
     <a href="http://www.wcd.nic.in/notification/recruitment-vacancies">{% trans "New Vacancies out" %}</a>
     <br>
     <a href="http://www.thehindu.com/news/cities/Delhi/govt-doubles-salary-of-anganwadi-workers/article19333885.ece">{% trans "Govt.doubles the salary-of-anganwadi-workers" %}</a>
@@ -18,7 +25,6 @@
     <br>
   </marquee></td>
 </tr>
-
 </table>
 <br>
 <br>
@@ -31,3 +37,4 @@
 </marquee>
 </center>
 {% endblock %}
+  

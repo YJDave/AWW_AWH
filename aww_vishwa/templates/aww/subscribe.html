@@ -7,6 +7,6 @@ announced...</h3>
 {% block content %}
 <form method="post">{% csrf_token %}
 {{ form.as_p }}
-<button type="submit">Subscribe</button>
+<button class="btn btn-info" type="submit">Subscribe</button>
 </form>
 {% endblock %}
