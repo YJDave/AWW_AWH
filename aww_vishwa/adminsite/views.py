@@ -28,7 +28,7 @@ def CenterInfo(request, center_id):
 @login_required(login_url=login_url)
 def CenterApplications(request, center_id):
 	center = get_object_or_404(Center, id=center_id)
-	applications = Application.objects.filter(center=center)
+	applications = Application.objects.filter(center=center).order_by('-digital_mark')
 	return render(request, "admin/applications.html", {'applications': applications})
 
 @login_required(login_url=login_url)

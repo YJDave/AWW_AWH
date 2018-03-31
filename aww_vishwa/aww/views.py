@@ -22,18 +22,19 @@ def ListCirculars(request):
 	return render(request, "aww/circulars.html", {})
 
 def ListVacancies(request):
-	centerName = Center.name
-	sectorName = Center.sector
-	stateList = Center.state
-	districtList = Center.discrict
-	projectList = Center.project
-	workerVacancies = Center.W_vacancies
-	helperVacancies = Center.H_vacancies
+	# centerName = Center.name
+	# sectorName = Center.sector
+	# stateList = Center.state
+	# districtList = Center.district
+	# projectList = Center.project
+	# workerVacancies = Center.W_vacancies
+	# helperVacancies = Center.H_vacancies
 
-	return render(request, "aww/vacancies.html", {'centerName':centerName, 
-	'sectorName':sectorName, 'stateList':stateList,'districtList':districtList,
-	'projectList':projectList,'workerVacancies':workerVacancies, 
-	'helperVacancies':helperVacancies})
+	# return render(request, "aww/vacancies.html", {'centerName':centerName, 
+	# 'sectorName':sectorName, 'stateList':stateList,'districtList':districtList,
+	# 'projectList':projectList,'workerVacancies':workerVacancies, 
+	# 'helperVacancies':helperVacancies})
+	return render(request, "aww/vacancies.html", {})
 
 def ApplyForVacancy(request):
 	if request.method == 'POST':

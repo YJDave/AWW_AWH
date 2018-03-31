@@ -12,23 +12,10 @@
 	<link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 <body>
-
-<div class="row ">
-	<div class="col-sm-1">
-		<img src="http://jobsamosa.com/wp-content/uploads/2014/10/Ministry-of-Women-Child-Development-Recruitment-2014.jpg" alt="" class="img-rounded">
-	</div>	
-	<center>
-		<div class="col-sm-10" >
-			<div class="text-danger">
-				<div style="padding-top:10px;padding-bottom:10px;"" class="bg-info">
-				<h1><span id="heading">Anganwadi Workers & Helpers Recruitment</span></h1>
-				</div>
-			</div>
-		</div>
-	</center>
-	<div class=" text-right">
-		<img src="https://english.newstracklive.com/uploads/education-news/job-search-news/Jun/19/big_thumb/18-1452011456_5947524170597_5947b0b8f0a6a.jpg" alt="" class="img-rounded">
-	</div>
+	<div class="well">
+	<img src="http://jobsamosa.com/wp-content/uploads/2014/10/Ministry-of-Women-Child-Development-Recruitment-2014.jpg" alt="" class="img-rounded">
+	<span id="heading">{% trans "Anganwadi Workers & Helpers Recruitment" %}</span>
+	<img src="https://english.newstracklive.com/uploads/education-news/job-search-news/Jun/19/big_thumb/18-1452011456_5947524170597_5947b0b8f0a6a.jpg" alt="" class="img-rounded">
 </div>
 
 <nav class="navbar navbar-default">
@@ -41,7 +28,6 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a href="#" class="navbar-brand">GirlsWhoHack</a>
 		</ul>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
@@ -55,10 +41,24 @@
 				<li><a href="{% url 'circulars' %}">{% trans "Circulars" %}</a></li>
 				<li><a href="{% url 'vacancies' %}">{% trans "Vacancies" %}</a></li>
 				<li><a href="{% url 'results' %}">{% trans "Results" %}</a></li>
-				<li><a href="{% url 'contact_us' %}">{% trans "Contact Us" %}</a></li>
+				<!-- <li><a href="{% url 'contact_us' %}">{% trans "Contact Us" %}</a></li> -->
+				<li><div id="google_translate_element"></div><script type="text/javascript">
+				function googleTranslateElementInit() {
+				  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'gu,hi'}, 'google_translate_element');
+				}
+				</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+				</li>
 			</ul>
+<<<<<<< 16191cceecb0dbe54dd614be5d9252257fb18cde
 			<!-- <ul class="nav navbar-nav navbar-right">
 				<li><a href="{% url 'admin_login' %}">{% trans "Admin Login" %}
+=======
+			<ul class="nav navbar-nav navbar-right">
+				<!--<li><a href="#">Signup
+					<i class="fa fa-user-plus" aria-hidden="true"></i></a>
+				</li>-->
+				<li><a href="admin/">{% trans "Admin Login" %}
+>>>>>>> Second round evaluation.
 					<i class="fa fa-user" aria-hidden="true"></i></a>
 				</li>
 			</ul> -->
