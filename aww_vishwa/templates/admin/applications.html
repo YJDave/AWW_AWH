@@ -1,28 +1,38 @@
 {% extends 'admin/header.html' %}
 {% load i18n %}
 {% block content %}
-<table border="1" width="50%">
+<div class="well">
+	<h6>Filters</h6>
+	<button>Submitted</button>
+	<button>Selected for interview</button>
+	<button>Selected finally</button>
+	<button id="callSelectedCandidates">Call all selected candidates for interview</button>
+	<button>Call all finally selected candidates</button>
+</div>
+<div class="well">
+	<h4>All submitted applications</h4>
+	<table border="1" width="50%">
+		<tr>
+			<td>Applicant's Name</td>
+			<td>Applicant's Center</td>
+			<td>Applicant's Marks</td>
+			<td>Interview selection</td>
+			<td>Final selection</td>
+		</tr>
+	<br />
+	{% for app in applications %}
 	<tr>
-		<td>Applicant's Name</td>
-		<td>Applicant's Center</td>
-		<td>Applicant's Marks</td>
+		<td><a href='{{app.id}}/'>{{ app.applicant_name }}</a></td>
+		<td>{{ app.center }}</td>
+		<td>{{ app.digital_mark }}</td>
+		<td><a href="#">Select for interview</a></td>
+		<td><a href="#">Select finally</a></td>
 	</tr>
-
-<button>Submitted</button>
-<button>Selected for interview</button>
-<button>Selected finally</button>
-<button>Call all selected candidates for interview</button>
-<button>Call all finally selected candidates</button>
-<br />
-{% for app in applications %}
-<tr>
-	<td><a href='{{app.id}}/'>{{ app.applicant_name }}</a></td>
-	<td>{{ app.center }}</td>
-	<td>{{ app.digital_mark }}</td>
-	<button>Select for interview</button>
-	<button>Select finally</button>
-</tr>
-{% endfor %}
-<button>Archive</button>
-<button>Print</button>
+	{% endfor %}
+	</table>
+</div>
+<div class="well">
+	<button>Archive</button>
+	<button>Print</button>
+</div>
 {% endblock %}

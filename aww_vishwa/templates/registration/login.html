@@ -1,9 +1,10 @@
 {% extends 'aww/base.html' %}
 {% block content %}
-<h3>Login page for admin user...</h3>
-<form method="post">
-{% csrf_token %}
-{{ form.as_p }}
-<button type="submit">Login</button>
-</form>
+<div class="well">
+	<h3>Admin login</h3>
+	<form method="post">{% csrf_token %}
+	{{ form.as_p }}
+	<button type="submit">Login</button>
+	</form>
+</div>
 {% endblock %}
