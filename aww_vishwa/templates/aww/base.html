@@ -12,11 +12,27 @@
 	<link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 <body>
-	<img src="http://jobsamosa.com/wp-content/uploads/2014/10/Ministry-of-Women-Child-Development-Recruitment-2014.jpg" alt="" class="img-rounded">
-	<span id="heading">{% trans "Anganwadi Workers & Helpers Recruitment" %}</span>
-	<img src="https://english.newstracklive.com/uploads/education-news/job-search-news/Jun/19/big_thumb/18-1452011456_5947524170597_5947b0b8f0a6a.jpg" alt="" class="img-rounded">
+
+<div class="row ">
+	<div class="col-sm-1">
+		<img src="http://jobsamosa.com/wp-content/uploads/2014/10/Ministry-of-Women-Child-Development-Recruitment-2014.jpg" alt="" class="img-rounded">
+	</div>	
+	<center>
+		<div class="col-sm-10" >
+			<div class="text-danger">
+				<div style="padding-top:10px;padding-bottom:10px;"" class="bg-info">
+				<h1><span id="heading">Anganwadi Workers & Helpers Recruitment</span></h1>
+				</div>
+			</div>
+		</div>
+	</center>
+	<div class=" text-right">
+		<img src="https://english.newstracklive.com/uploads/education-news/job-search-news/Jun/19/big_thumb/18-1452011456_5947524170597_5947b0b8f0a6a.jpg" alt="" class="img-rounded">
+	</div>
+</div>
 
 <nav class="navbar navbar-default">
+<div class="primary">
 	<div class="container">
 		<ul class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -29,6 +45,7 @@
 		</ul>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
+
 				<li class="active1"><a href="{% url 'home_page' %}">{% trans "Home" %}</a></li>
 				<li><a href="{% url 'apply' %}">{% trans "Apply" %}</a></li>
 				<li><a href="{% url 'guidelines' %}">{% trans "Guide Lines" %}</a></li>
@@ -40,21 +57,25 @@
 				<li><a href="{% url 'results' %}">{% trans "Results" %}</a></li>
 				<li><a href="{% url 'contact_us' %}">{% trans "Contact Us" %}</a></li>
 			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<!--<li><a href="#">Signup
-					<i class="fa fa-user-plus" aria-hidden="true"></i></a>
-				</li>-->
+			<!-- <ul class="nav navbar-nav navbar-right">
 				<li><a href="{% url 'admin_login' %}">{% trans "Admin Login" %}
 					<i class="fa fa-user" aria-hidden="true"></i></a>
 				</li>
-			</ul>
+			</ul> -->
 	</div>
+</div>
+
 </nav>
+<ul class="nav navbar-nav navbar-right">
+	<div class="bg-info">
+		<li><a class="btn btn-primary" href="{% url 'admin_login' %}">Admin Login  <i class="fa fa-user" aria-hidden="true"></i></a></li>
+	</div>
+</ul>
 {% block content %}
 {% endblock %}
 
-<footer style="padding-bottom: 50px; padding-top: 50px; text-align: center;">
-	Copyright 2018. Girls Who Hack.
+
+<footer poition="fix" bottom=" 0" style="padding-bottom: 50px; padding-top: 50px; text-align: center;">
 </footer>
 
 <script
