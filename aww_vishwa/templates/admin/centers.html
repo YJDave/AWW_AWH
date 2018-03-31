@@ -1,22 +1,26 @@
 {% extends 'admin/header.html' %}
 {% load i18n %}
 {% block content %}
-<table border="1" width="50%" style="margin: 15px;">
-	<tr>
-		<td>Center no.</td>
-		<td>Center name</td>
-		<td>Center address</td>
-		<td>Center applications</td>
-		<td>Add new vacancy</td>
-	</tr>
+<div class="well">
+	<h4>All centers</h4>
+	<table border="1" width="50%">
+		<tr>
+			<td>Center no.</td>
+			<td>Center name</td>
+			<td>Center address</td>
+			<td>Center applications</td>
+			<td>Add new vacancy</td>
+		</tr>
 
-{% for center in centers %}
-	<tr>
-	<td><a href="/accounts/centers/{{ center.id }}/">{{ center.center_no }}</a></td>
-	<td>{{ center.name }}</td>
-	<td>{{ center.address }}</td>
-	<td><a href="/accounts/centers/{{ center.id }}/applications">Click here to see all applications</a></td>
-	<td><a href="#">Click here to add new vacancy</a></td>
-	</tr>
-{% endfor %}
+	{% for center in centers %}
+		<tr>
+		<td><a href="/accounts/centers/{{ center.id }}/">{{ center.center_no }}</a></td>
+		<td>{{ center.name }}</td>
+		<td>{{ center.address }}</td>
+		<td><a href="/accounts/centers/{{ center.id }}/applications">Click here to see all applications</a></td>
+		<td><a href="#">Click here to add new vacancy</a></td>
+		</tr>
+	{% endfor %}
+	</table>
+</div>
 {% endblock %}
