@@ -1,7 +1,7 @@
 Babel==2.5.3
 certifi==2018.1.18
 chardet==3.0.4
-Django==1.11
+Django==1.11.28
 django-phonenumber-field==2.0.0
 idna==2.6
 phonenumberslite==8.8.11
